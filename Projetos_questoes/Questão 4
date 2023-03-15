@@ -1,0 +1,17 @@
+// Valores Diários aleátorios
+const faturamentodiario = [1010, 1500, 840, 1200, 2000, 3000, 2555, 999, 0, 1800, 1600, 980, 1700, 2201, 2500, 2805, 2200, 2100, 2070, 1800, 1500, 2000, 3000, 2500, 3500, 2800, 2700, 2800, 3200, 2000];
+
+const menorfaturamento_diario = Math.min(...faturamentodiario);
+const maiorfaturamento_diario = Math.max(...faturamentodiario);
+
+const totalFaturamento = faturamentodiario.reduce((acumulador, valorAtual) => acumulador + valorAtual);
+const diasComFaturamento = faturamentodiario.filter((valor) => valor > 0).length;
+const mediaFaturamentoDiario = totalFaturamento / diasComFaturamento;
+
+const dias_acimadaM = faturamentodiario.filter((valor) => valor > mediaFaturamentoDiario).length;
+
+console.log(`Menor valor de faturamento diário ---> R$ ${menorfaturamento_diario}`);
+
+console.log(`Maior valor de faturamento diário ---> R$ ${maiorfaturamento_diario}`);
+
+console.log(`Número de dias com faturamento acima da média mensal ---> ${dias_acimadaM}`);

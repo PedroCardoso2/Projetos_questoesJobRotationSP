@@ -1,0 +1,20 @@
+def fibonacci(x):
+    if x < 0:
+        return False
+
+    if x == 0 or x == 1:
+        return True
+
+    a, b = 0, 1
+
+    while b < x:
+        a, b = b, a + b
+
+    return b == x
+
+num = int(input("Digite um número inteiro ----> "))
+
+if fibonacci(num):
+    print(f"Seu número {num} pertence à sequência de fibonacci!")
+else:
+    print(f"O número {num} não pertence à sequência de fibonacci!")
